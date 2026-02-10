@@ -7,6 +7,16 @@ git clone --bare https://github.com/d2gram/dotfiles.git $HOME/.dotfiles
 dot checkout
 ```
 
+# conflict resolve
+```bash
+mkdir -p ~/.dotfiles-backup
+dot checkout 2>&1 | grep "^\t" | awk '{print $1}' | xargs -I{} mv {} ~/.dotfiles-backup/{}
+
+dot checkout
+
+dot config --local status.showUntrackedFiles no
+```
+
 # install eza (in deb/ubt)
 ```bash
 sudo apt install -y gpg 
