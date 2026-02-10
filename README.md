@@ -17,7 +17,14 @@ dot checkout
 dot config --local status.showUntrackedFiles no
 ```
 
-# install eza (in deb/ubt)
+# install dependency
+## zsh plugins
+```bash
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+```
+## eza
 ```bash
 sudo apt install -y gpg 
 sudo mkdir -p /etc/apt/keyrings
@@ -27,4 +34,4 @@ sudo chmod 644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.lis
 sudo apt update
 sudo apt install -y eza
 ```
-(shell script from eza's official repository)
+
